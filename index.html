@@ -4,36 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="js/script.js" defer></script>
     <title>Leadership Message</title>
 </head>
 <body>
-    <article>
-        <img src="/images/leader.png" class="img-fluid" alt="leader's image">
-        <div class="">
-            <h2 class="">
-                Leadership Message
-            </h2>
-            <p class="">
-                It is in times of crisis that heroes are born. In all modesty, 
-                we want our values to shine at this difficult hour It is in times 
-                crisis that heroes are born. this difficult hour It is in times crisis 
-                It is in times of crisis that heroes are born. In all modesty, 
-                we want our values to shine at this difficult hour It is in times 
-                crisis that heroes are born. this difficult hour It is in times crisis
-            </p>
-            <button>
-                see more
-            </button>
-        </div>  <!--  leader's message div -->
-        <div class="">
-            <p class="">
-                Jennifer Doe
-            </p>
-            <p class="">
-                Business Group Lead
-            </p>
-        </div>  <!--  leader's name and title div -->
+    <article class="d-flex flex-row ">
+        <img src="/images/leader.png" class="img-fluid mx-auto" alt="leader's image">
+        <div class="p-4 d-flex flex-column"> 
+            <div id="messageDiv" class="d-flex flex-column align-items-start">
+                <h2 class=" h2 text-white ">
+                    Leadership Message
+                </h2>
+                <p class=" m-0 text-white ">
+                    "It is in times of crisis that heroes are born. In all modesty, 
+                    we want our values to shine at this difficult hour It is in times 
+                    crisis that heroes are born. this difficult hour It is in times crisis 
+                    It is in times of crisis that heroes are born. In all modesty, 
+                    we want our values to shine at this difficult hour It is in times 
+                    crisis that heroes are born. this difficult hour It is in times crisis"
+                </p>
+                <div id="accordion">
+                    <button id="see-more-btn" class="btn btn-link text-dark p-0 text-white " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <u>See more</u>
+                    </button>
+            
+                    <div id="collapseOne" class="collapse" data-parent="#accordion">
+                        <p class="text-white ">
+                            "It is in times of crisis that heroes are born. In all modesty, 
+                            we want our values to shine at this difficult hour It is in times 
+                            crisis that heroes are born. this difficult hour It is in times crisis 
+                            It is in times of crisis that heroes are born. In all modesty, 
+                            we want our values to shine at this difficult hour It is in times 
+                            crisis that heroes are born. this difficult hour It is in times crisis"
+                        </p>
+                        <button id="see-less-btn" class="btn btn-link text-dark  p-0 text-white " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <u>See less</u>
+                        </button>
+                    </div>
+
+                    
+                </div>   <!--  see more accordion div -->
+            </div>  <!--  leader's message div -->
+            <div id="titleDiv" class="d-flex d-flex align-items-end footer">
+                <p  class="text-white ">
+                    Jennifer Doe <br>
+                    Business Group Lead
+                </p>
+            </div>  <!--  leader's name and title div -->
+        </div> <!--  container div -->
     </article>
+
+    <script src="/js/jquery.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     
 </body>
 </html>

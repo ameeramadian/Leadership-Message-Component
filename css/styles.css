@@ -1,0 +1,22 @@
+/* Global styles
+------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* ------------------------------------*/
+#messageDiv {
+  background: #008dc4;
+}
+
+#titleDiv {
+  background: #0c6396;
+}
+
+/*# sourceMappingURL=styles.css.map */
