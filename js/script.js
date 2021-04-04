@@ -7,6 +7,7 @@ const thirdLayoutBtn = document.querySelector("#btnThirdLayout");
 const nameTitleDiv = document.querySelector("#titleDiv");
 const leftColumn = document.querySelector("#leftColumn");
 const rightColumn = document.querySelector("#rightColumn");
+const leaderImage = document.querySelector("#leaderImage");
 
 //elemnts for re-styling 
 const messageDiv = document.querySelector("#messageDiv");
@@ -47,11 +48,17 @@ function styleHorizontalLayout(){
         rightColumn.classList.remove("col-md-8")
     }
     if(leftColumn.classList.contains("col-12")){
-        leftColumn.classList.add("col-4")
-        leftColumn.classList.remove("col-12")
-        leftColumn.classList.remove("col-md-4")
+        leftColumn.classList.add("col-4");
+        leftColumn.classList.remove("col-12");
+        leftColumn.classList.remove("col-md-4");
         leftColumn.classList.remove("m-0");
     }
+}
+
+function setFirstButtonActive(){
+    firstLayoutBtn.classList.add("active");
+    secondLayoutBtn.classList.remove("active");
+    thirdLayoutBtn.classList.remove("active");
 }
 
 function styleFirstLayout(){
@@ -66,11 +73,12 @@ function styleFirstLayout(){
     styleFirstLayoutTextButtons();
 }
 
+setFirstButtonActive();
 styleFirstLayout();
 
 firstLayoutBtn.addEventListener('click',event => {
-   console.log("first button clicked !")
    rightColumn.appendChild(nameTitleDiv);
+   setFirstButtonActive();
    styleFirstLayout();
 });
 
@@ -97,6 +105,12 @@ const backgroundWhite = "#fff";
 const backgroundLessOpaqueDarkeBlue = "#0A2554";
 const textDarkBlue = "#0A2554";
 const textDecoartionGreen = "#42C3AF";
+
+function setSecondButtonActive(){
+    firstLayoutBtn.classList.remove("active");
+    secondLayoutBtn.classList.add("active");
+    thirdLayoutBtn.classList.remove("active");
+}
 
 function styleSecondLayoutText(){
     messageDiv.classList.toggle("text-white", false);
@@ -153,20 +167,38 @@ function styleSecondLayout(){
 
 function repositionTitleDiv(){
     nameTitleDiv.remove();
-    nameTitleDiv.style.zIndex = "10";
     leftColumn.appendChild(nameTitleDiv);
 }
 
 secondLayoutBtn.addEventListener('click',event => {
-    console.log("second button clicked !")
     repositionTitleDiv(); 
+    setSecondButtonActive();
     styleSecondLayout();
+    
     
  });
 
  //////////////////////////////////////////////////////////////// third Layout ////////////////////////////////////////////////////////////////
 
+const titleText = document.querySelector("#titleText")
+
+ function setthirdButtonActive(){
+    firstLayoutBtn.classList.remove("active");
+    secondLayoutBtn.classList.remove("active");
+    thirdLayoutBtn.classList.add("active");
+}
+
+function placeImageinTitleDiv(){
+    leftColumn.remove();
+    titleDiv.appendChild(leaderImage)
+    titleDiv.insertBefore(leaderImage, titleText)
+    leaderImage.classList.add("m-2")
+    leaderImage.classList.remove("col-12")
+    leaderImage.style.width = "73px"
+}
+
  thirdLayoutBtn.addEventListener('click',event => {
-    console.log("third button clicked !")
+    setthirdButtonActive();
+    // placeImageinTitleDiv();
  });
 
