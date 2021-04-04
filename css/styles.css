@@ -10,14 +10,4 @@ html {
   box-sizing: inherit;
 }
 
-/* ------------------------------------*/
-#messageDiv {
-  background: #008dc4;
-}
-
-#titleDiv {
-  background: #0c6396;
-  font-size: 0.8rem;
-}
-
 /*# sourceMappingURL=styles.css.map */

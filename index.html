@@ -12,13 +12,15 @@
 <body>
     <article class="container">
         <div class="row">
-            <img src="/images/leader.png" class=" p-0 col-4 img-fluid mx-auto d-block" alt="leader's image">
-            <div class="col-8 p-0"> 
-                <div id="messageDiv" class=" p-4">
-                    <h2 class=" h2 text-white ">
+            <div id="leftColumn" class=" p-0 col-4 row container">
+                <img src="/images/leader.png" class="img-fluid mx-auto d-block p-0 col-12" alt="leader's image">
+            </div>
+            <div id="rightColumn" class="col-8 p-0"> 
+                <div id="messageDiv" class=" p-4  text-white">
+                    <h2 class=" h2 ">
                         Leadership Message
                     </h2>
-                    <p class=" mb-0 text-white">
+                    <p class=" mb-0 ">
                         "It is in times of crisis that heroes are born. In all modesty, 
                         we want our values to shine at this difficult hour It is in times 
                         crisis that heroes are born. this difficult hour It is in times crisis 
@@ -26,11 +28,11 @@
                         we want our values to shine at this difficult hour It is in times 
                         crisis that heroes are born. this difficult hour It is in times crisis
                     </p>
-                    <button id="see-more-btn" class="btn btn-link p-0 text-white" >   
-                        <u>See more</u>
+                    <button id="see-more-btn" class="btn btn-link p-0 text-white">   
+                        See more
                     </button>
                     <div id="collapseOne" class="d-none d-lg-block invisible">
-                        <p class="text-white mb-0">
+                        <p class=" mb-0">
                             It is in times of crisis that heroes are born. In all modesty, 
                             we want our values to shine at this difficult hour It is in times 
                             crisis that heroes are born. this difficult hour It is in times crisis 
@@ -39,7 +41,7 @@
                             crisis that heroes are born. this difficult hour It is in times crisis"
                         </p>
                         <button id="see-less-btn" class="btn btn-link  p-0 text-white" >   
-                            <u>See less</u>
+                            See less
                         </button>
                     </div>  <!--  hidden text div-->
                 </div>  <!--  leader's message div -->
@@ -52,6 +54,21 @@
             </div> <!--  text div -->
         </div>  <!--  container row div -->
     </article>
+    <div class="container p-4">
+        <div class="text-center">
+            <button id="btnFirstLayout" class="btn btn-outline-primary">
+                First Layout 
+            </button>
+            <button id="btnSecondLayout" class="btn btn-outline-primary">
+                Second Layout 
+            </button>
+            <button id="btnThirdLayout" class="btn btn-outline-primary">
+                Third Layout 
+            </button>
+
+        </div>
+
+    </div> <!--  buttons div -->
 
     <script src="/js/jquery.slim.min.js"></script>
     <script src="/js/popper.min.js"></script>
