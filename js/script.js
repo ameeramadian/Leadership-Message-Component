@@ -62,29 +62,36 @@ function setLayoutButtonActive(activeLayout){
 }
 
 function styleTextButtons(buttonTextColor, decorationColor){
+    seeMoreButton.style.textDecoration = "underline";
+    seeMoreButton.style.textDecorationThickness = "3px";
+    seeMoreButton.style.textUnderlineOffset = "4px";
+    seeLessButton.style.textDecoration = "underline";
+    seeLessButton.style.textDecorationThickness = "3px";
+    seeLessButton.style.textUnderlineOffset = "4px";
+
     if (buttonTextColor  == "white" ){
-
         seeMoreButton.classList.toggle("text-white", true);
-        seeMoreButton.style.textDecoration = "underline";
         seeMoreButton.style.textDecorationColor = decorationColor;
-    
         seeLessButton.classList.toggle("text-white", true);
-        seeLessButton.style.textDecoration = "underline";
         seeLessButton.style.textDecorationColor = decorationColor;
-
     } else {
-
         seeMoreButton.classList.toggle("text-white", false);
         seeMoreButton.style.color = buttonTextColor;
-        seeMoreButton.style.textDecoration = "underline";
         seeMoreButton.style.textDecorationColor = decorationColor;
-
         seeLessButton.classList.toggle("text-white", false);
         seeLessButton.style.color = buttonTextColor;
-        seeLessButton.style.textDecoration = "underline";
         seeLessButton.style.textDecorationColor = decorationColor;
-
     }
+}
+
+function removeImageFromTitleDiv(){
+    leaderImage.remove();
+    let row = document.querySelector("#row");
+    row.appendChild(leftColumn);
+    leftColumn.appendChild(leaderImage)
+    leaderImage.classList.add("col-12")
+    leaderImage.classList.remove("m-2")
+    row.insertBefore(leftColumn, rightColumn)
 }
 
 ////////////////////////////////////////////////////////////////First Layout ////////////////////////////////////////////////////////////////
@@ -94,17 +101,13 @@ const backgroundDarkerBlue = "#0c6396";
 const backgroundLighterBlue = "#008dc4";
 
 function styleHorizontalLayout(){
-    if(rightColumn.classList.contains("col-12")){
         rightColumn.classList.add("col-8")
         rightColumn.classList.remove("col-12")
         rightColumn.classList.remove("col-md-8")
-    }
-    if(leftColumn.classList.contains("col-12")){
         leftColumn.classList.add("col-4");
         leftColumn.classList.remove("col-12");
         leftColumn.classList.remove("col-md-4");
         leftColumn.classList.remove("m-0");
-    }
 }
 
 function setBackgroundBlue(){
@@ -116,6 +119,7 @@ function setBackgroundBlue(){
 function removeTitleFromTopOfImage(){
     leftColumn.classList.remove("position-relative");
     titleDiv.classList.remove("position-absolute");
+    rightColumn.appendChild(titleDiv);
 }
 
 function styleFirstLayout(){
@@ -125,6 +129,7 @@ function styleFirstLayout(){
     setBackgroundBlue()
     styleHorizontalLayout()
     removeTitleFromTopOfImage()
+    removeImageFromTitleDiv()
     styleTextButtons("white", "white");
 }
 
@@ -144,17 +149,17 @@ const textDarkBlue = "#0A2554";
 const textDecoartionGreen = "#42C3AF";
 
 function styleVerticalLayout(){
-    if(rightColumn.classList.contains("col-8")){
         rightColumn.classList.remove("col-8")
         rightColumn.classList.add("col-12")
         rightColumn.classList.add("col-md-8")
-    }
-    if(leftColumn.classList.contains("col-4")){
         leftColumn.classList.remove("col-4")
         leftColumn.classList.add("col-12")
         leftColumn.classList.add("col-md-4")
         leftColumn.classList.add("m-0");
-    }
+}
+function repositionTitleDiv(){
+    titleDiv.remove();
+    leftColumn.appendChild(titleDiv);
 }
 
 function addTitleOnTopOfImage(){
@@ -178,6 +183,8 @@ function setTextDark(){
 function styleSecondLayout(){     
     seeMoreButton.classList.add("my-4")
     seeLessButton.classList.add("my-4")
+    removeImageFromTitleDiv()
+    repositionTitleDiv(); 
     styleVerticalLayout()
     setBackgroundWhite()
     addTitleOnTopOfImage()
@@ -185,13 +192,9 @@ function styleSecondLayout(){
     styleTextButtons(textDarkBlue, textDecoartionGreen);
 }
 
-function repositionTitleDiv(){
-    titleDiv.remove();
-    leftColumn.appendChild(titleDiv);
-}
+
 
 secondLayoutBtn.addEventListener('click',event => {
-    repositionTitleDiv(); 
     setLayoutButtonActive(2);
     styleSecondLayout();
     
@@ -199,6 +202,9 @@ secondLayoutBtn.addEventListener('click',event => {
  });
 
  //////////////////////////////////////////////////////////////// third Layout ////////////////////////////////////////////////////////////////
+
+ const backgroundNavyBlue = "#0A2554"; 
+ const backgroundLighterNavyBlue = "#183b68";
 
 function placeImageinTitleDiv(){
     leftColumn.remove();
@@ -209,8 +215,29 @@ function placeImageinTitleDiv(){
     leaderImage.style.width = "73px"
 }
 
+function setBackgroundNavyBlue(){
+    messageDiv.style.background = backgroundNavyBlue;
+    titleDiv.style.background = backgroundLighterNavyBlue;
+    titleDiv.style.opacity = "1";
+}
+
+function styleStackedLayout(){
+        rightColumn.classList.remove("col-8")
+        rightColumn.classList.add("col-12")
+}
+
+function styleThirdLayout(){
+    messageDiv.classList.toggle("text-white",true);
+    setBackgroundNavyBlue()
+    styleStackedLayout()
+    removeTitleFromTopOfImage()
+    placeImageinTitleDiv();
+    styleTextButtons("white", textDecoartionGreen );
+}
+
  thirdLayoutBtn.addEventListener('click',event => {
     setLayoutButtonActive(3);
-    // placeImageinTitleDiv();
+    styleThirdLayout()
+
  });
 
