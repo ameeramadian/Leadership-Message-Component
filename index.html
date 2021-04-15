@@ -9,70 +9,42 @@
     <script src="js/script.js" defer></script>
     <title>Leadership Message</title>
 </head>
-<body>
-    <article class="container">
-        <div id="row" class="row">
-            <div id="leftColumn" class=" p-0 col-4 row container">
-                <img id="leaderImage" src="/images/leader.png" class="img-fluid p-0 col-12" alt="leader's image">
-            </div>
-            <div id="rightColumn" class="col-8 p-0"> 
-                <div id="messageDiv" class=" p-4  text-white">
-                    <h2 class=" h2 ">
-                        Leadership Message
-                    </h2>
-                    <p class=" mb-0 ">
-                        "It is in times of crisis that heroes are born. In all modesty, 
-                        we want our values to shine at this difficult hour It is in times 
-                        crisis that heroes are born. this difficult hour It is in times crisis 
-                        It is in times of crisis that heroes are born. In all modesty, 
-                        we want our values to shine at this difficult hour It is in times 
-                        crisis that heroes are born. this difficult hour It is in times crisis
-                    </p>
-                    <button id="see-more-btn" class="btn btn-link p-0 text-white">   
-                        See more
-                    </button>
-                    <div id="collapseOne" class="d-none d-lg-block invisible">
-                        <p class=" mb-0">
-                            It is in times of crisis that heroes are born. In all modesty, 
-                            we want our values to shine at this difficult hour It is in times 
-                            crisis that heroes are born. this difficult hour It is in times crisis 
-                            It is in times of crisis that heroes are born. In all modesty, 
-                            we want our values to shine at this difficult hour It is in times 
-                            crisis that heroes are born. this difficult hour It is in times crisis"
-                        </p>
-                        <button id="see-less-btn" class="btn btn-link  p-0 text-white" >   
-                            See less
-                        </button>
-                    </div>  <!--  hidden text div-->
-                </div>  <!--  leader's message div -->
-                <div id="titleDiv" class=" px-4 d-flex">
-                    <p id="titleText" class=" mb-0 py-2 text-white">
-                        Jennifer Doe <br>
-                        Business Group Lead
-                    </p>
-                </div>  <!--  leader's name and title div -->
-            </div> <!--  text div -->
-        </div>  <!--  container row div -->
-    </article>
-    <div class="container p-4">
-        <div class="text-center">
-            <button id="btnFirstLayout" class="btn btn-outline-primary">
-                First Layout 
-            </button>
-            <button id="btnSecondLayout" class="btn btn-outline-primary">
-                Second Layout 
-            </button>
-            <button id="btnThirdLayout" class="btn btn-outline-primary">
-                Third Layout 
-            </button>
-
-        </div>
-
+<body class="container">
+    <div class="row">
+        <div class="leader leader--medium col-4 p-0">
+            <div class="leader__info leader__info--medium ">
+                <p class="m-0">
+                    Jennifer Doe
+                </p>
+                <p class="m-0">
+                    Business Group Lead
+                </p>
+            </div>  <!--  leader's div -->
+        </div>    
+        <div class="leadersMessage leadersMessage--medium col-8 p-0">
+            <h2 class="px-4 pt-4 ">
+                Leadership Message
+            </h2>
+            <blockquote class=" px-4">
+                "It is in times of crisis that heroes are born. 
+                In all modesty, we want our values to shine at this difficult hour. 
+                It is in times of crisis that heroes are born. In all modesty, we want our values to shine at this difficult hour..." 
+            </blockquote>
+            <a href="#" class="leadersMessage__seeMore leadersMessage__seeMore--medium  px-4 d-block" >
+                See More
+            </a>
+        </div> <!--  message's div -->
+    </div> 
+    <div class="text-center p-4">
+        <button class="btnFirstLayout btn btn-outline-primary">
+            First Layout 
+        </button>
+        <button class="btnSecondLayout btn btn-outline-primary">
+            Second Layout 
+        </button>
+        <button class="btnThirdLayout btn btn-outline-primary my-1">
+            Third Layout 
+        </button>
     </div> <!--  buttons div -->
-
-    <script src="/js/jquery.slim.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    
 </body>
 </html>

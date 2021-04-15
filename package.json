@@ -1,0 +1,23 @@
+{
+  "name": "leadershipmessagecomponent",
+  "version": "1.0.0",
+  "description": "leadership componment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch css/styles.scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameeramadian/LeadershipMessageComponent.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ameeramadian/LeadershipMessageComponent/issues"
+  },
+  "homepage": "https://github.com/ameeramadian/LeadershipMessageComponent#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
