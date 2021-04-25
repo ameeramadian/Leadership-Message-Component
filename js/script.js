@@ -3,6 +3,9 @@ const firstLayoutBtn = document.querySelector(".btnFirstLayout");
 const secondLayoutBtn = document.querySelector(".btnSecondLayout");
 const thirdLayoutBtn = document.querySelector(".btnThirdLayout");
 
+//elements for styling
+const themeDiv = document.querySelector(".theme")
+
 // elements for re-ordering
 const leaderDiv = document.querySelector(".leader");
 const leaderInfoDiv = document.querySelector(".leader__info");
@@ -34,32 +37,34 @@ function setLayoutButtonActive(activeLayout){
     }
 }
 
-function clearClassList(element, classToRemove){
-    for( i = 0; i < element.classList.length; i++){
-        c = element.classList[i];
-        if( c.startsWith(classToRemove) || c.startsWith("col-")){
-            element.classList.remove(c);
-            i--;
-        }
-    }
+function clearClassList(element){
+    if(element === themeDiv){
+        let themeClass = themeDiv.className.match(/(^|\s)theme-\S+/g) || []
+        themeDiv.className = themeDiv.className.replace(themeClass, "")
+    }else{
+        [...element.classList].filter(
+            c=>{
+                return c.startsWith("col-")
+           }
+        ).forEach(e => {
+            element.classList.remove(e)
+          }) 
+    }   
 }
 
-function addThemeClasses(theme){
-    leaderDiv.classList.add(`leader--${theme}`);
-    leaderMessageDiv.classList.add(`leadersMessage--${theme}`);
-    leaderInfoDiv.classList.add(`leader__info--${theme}`);
-    leaderMessageSeeMore.classList.add(`leadersMessage__seeMore--${theme}`);
+function addThemeClass(theme){
+    themeDiv.classList.add(`theme--${theme}`)
 }
 
 function addStyleClasses(activeLayout){
-    clearClassList(leaderDiv, "leader-")
-    clearClassList(leaderMessageDiv, "leadersMessage-")
-    clearClassList(leaderInfoDiv, "leader__info-")
-    clearClassList(leaderMessageSeeMore, "leadersMessage__seeMore-")
+    clearClassList(themeDiv)
+    clearClassList(leaderDiv)
+    clearClassList(leaderMessageDiv)
+    clearClassList(leaderInfoDiv)
 
     switch (activeLayout) {
         case 2 : { 
-            addThemeClasses("light");
+            addThemeClass("light");
             leaderDiv.classList.add("col-sm-12");
             leaderDiv.classList.add("col-md-4");
             leaderMessageDiv.classList.add("col-sm-12"); 
@@ -67,13 +72,13 @@ function addStyleClasses(activeLayout){
            break;
         }
         case 3 : {
-            addThemeClasses("dark");
+            addThemeClass("dark");
             leaderDiv.classList.add("col-12");
             leaderMessageDiv.classList.add("col-12"); 
            break;
         }
         default: {
-            addThemeClasses("medium");
+            addThemeClass("medium");
              leaderDiv.classList.add("col-4");
              leaderMessageDiv.classList.add("col-8");
            break;

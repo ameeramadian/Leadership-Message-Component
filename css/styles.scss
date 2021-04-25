@@ -26,33 +26,35 @@ a {
 $backgroundDarkerBlue: #0c6396;
 $backgroundLighterBlue: #008dc4;
 
-.leadersMessage--medium {
-  background: $backgroundLighterBlue;
-  color: white;
-}
+.theme--medium {
+  .leadersMessage {
+    background: $backgroundLighterBlue;
+    color: white;
+  }
 
-.leadersMessage__seeMore--medium {
-  color: white;
-  text-decoration: none;
-}
+  .leadersMessage__seeMore {
+    color: white;
+    text-decoration: none;
+  }
 
-.leadersMessage__seeMore--medium :focus,
-.leadersMessage__seeMore--medium :hover {
-  color: white;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 2px;
-}
+  .leadersMessage__seeMore :focus,
+  .leadersMessage__seeMore :hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+  }
 
-.leader__info--medium {
-  background: $backgroundDarkerBlue;
-  opacity: 1;
-  color: white;
-  padding: 8px 24px;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
+  .leader__info {
+    background: $backgroundDarkerBlue;
+    opacity: 1;
+    color: white;
+    padding: 8px 24px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+  }
 }
 
 //////////////////////////////////////////////////////////////// second Layout ////////////////////////////////////////////////////////////////
@@ -60,58 +62,60 @@ $backgroundLighterBlue: #008dc4;
 $textAndBackgroundNavyBlue: #0a2554;
 $textDecoartionGreen: #42c3af;
 
-.leadersMessage--light {
-  background: white;
-  color: $textAndBackgroundNavyBlue;
-}
-
-.leadersMessage__seeMore--light {
-  color: $textAndBackgroundNavyBlue;
-  text-decoration: none;
-}
-
-.leadersMessage__seeMore--light:focus,
-.leadersMessage__seeMore--light:hover {
-  color: $textAndBackgroundNavyBlue;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 2px;
-  text-decoration-color: $textDecoartionGreen;
-}
-
-.leader--light {
-  position: relative;
-}
-
-.leader__info--light {
-  background: $textAndBackgroundNavyBlue;
-  opacity: 0.7;
-  color: white;
-  padding: 5px 18px;
-  position: absolute;
-  bottom: 24px;
-  left: 40%;
-  width: 60%;
-}
-
-@media (max-width: 767px) {
-  .leader--light {
-    background-position: top;
-    height: 24vh;
+.theme--light {
+  .leadersMessage {
+    background: white;
+    color: $textAndBackgroundNavyBlue;
   }
-}
 
-@media (min-width: 768px) and (max-width: 992px) {
-  .leader__info--light {
-    left: 0%;
-    width: 80%;
+  .leadersMessage__seeMore {
+    color: $textAndBackgroundNavyBlue;
+    text-decoration: none;
   }
-}
 
-@media (min-width: 993px) {
-  .leader__info--light {
+  .leadersMessage__seeMore:focus,
+  .leadersMessage__seeMore:hover {
+    color: $textAndBackgroundNavyBlue;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    text-decoration-color: $textDecoartionGreen;
+  }
+
+  .leader {
+    position: relative;
+  }
+
+  .leader__info {
+    background: $textAndBackgroundNavyBlue;
+    opacity: 0.7;
+    color: white;
+    padding: 5px 18px;
+    position: absolute;
+    bottom: 24px;
     left: 40%;
     width: 60%;
+  }
+
+  @media (max-width: 767px) {
+    .leader {
+      background-position: top;
+      height: 24vh;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    .leader__info {
+      left: 0%;
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 993px) {
+    .leader__info {
+      left: 40%;
+      width: 60%;
+    }
   }
 }
 
@@ -119,48 +123,49 @@ $textDecoartionGreen: #42c3af;
 
 $infoBackgroundLighterNavyBlue: #66badb;
 
-.leadersMessage--dark {
-  background: $textAndBackgroundNavyBlue;
-  color: white;
-  position: relative;
-}
-
-@media (max-width: 576px) {
-  .leadersMessage__seeMore--dark {
-    right: 20px;
+.theme--dark {
+  .leadersMessage {
+    background: $textAndBackgroundNavyBlue;
+    color: white;
+    position: relative;
   }
 
-  .leadersMessage__seeMore--dark:focus,
-  .leadersMessage__seeMore--dark:hover {
-    right: 20px;
+  @media (max-width: 576px) {
+    .leadersMessage__seeMore {
+      right: 20px;
+    }
+
+    .leadersMessage__seeMore:focus,
+    .leadersMessage__seeMore:hover {
+      right: 20px;
+    }
   }
-}
 
-.leadersMessage__seeMore--dark {
-  color: white;
-  text-decoration: none;
-  left: 0px;
-}
+  .leadersMessage__seeMore {
+    color: white;
+    text-decoration: none;
+    left: 0px;
+  }
 
-.leadersMessage__seeMore--dark:focus,
-.leadersMessage__seeMore--dark:hover {
-  color: white;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 2px;
-  text-decoration-color: $textDecoartionGreen;
-  left: 0px;
-}
+  .leadersMessage__seeMore:focus,
+  .leadersMessage__seeMore:hover {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 2px;
+    text-decoration-color: $textDecoartionGreen;
+    left: 0px;
+  }
 
-.leader__info--dark {
-  background: rgba($infoBackgroundLighterNavyBlue, 0.15);
-  color: white;
-  width: 100%;
-  padding: 8px 90px;
-}
+  .leader__info {
+    background: rgba($infoBackgroundLighterNavyBlue, 0.15);
+    color: white;
+    width: 100%;
+    padding: 8px 90px;
+  }
 
-.leader--dark {
-  //   background-position-x: 8px;
-  background-position: left;
-  background-size: contain;
+  .leader {
+    background-position: left;
+    background-size: contain;
+  }
 }
